@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: placement-demo
+spec:
+  nodeSelector:
+    accelerator: ai-demo
+  tolerations:
+    - key: "workload"
+      operator: "Equal"
+      value: "ai"
+      effect: "NoSchedule"
+  containers:
+    - name: app
+      image: nginx:1.27
