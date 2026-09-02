@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: platform-agent
+spec:
+  nodeSelector:
+    pool: platform
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "platform"
+      effect: "NoSchedule"
+  containers:
+    - name: agent
+      image: busybox:1.36
+      command: ["sh", "-c", "echo platform agent started; sleep 3600"]

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exists-match
+spec:
+  nodeSelector:
+    lab: operator-demo
+  tolerations:
+    - key: "team"
+      operator: "Exists"
+      effect: "NoSchedule"
+  containers:
+    - name: app
+      image: nginx:1.27

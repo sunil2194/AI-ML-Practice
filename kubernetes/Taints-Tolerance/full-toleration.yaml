@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: full-toleration
+spec:
+  nodeSelector:
+    lab: multi-taint
+  tolerations:
+    - key: "hardware"
+      operator: "Equal"
+      value: "gpu"
+      effect: "NoSchedule"
+    - key: "environment"
+      operator: "Equal"
+      value: "prod"
+      effect: "NoSchedule"
+  containers:
+    - name: app
+      image: nginx:1.27

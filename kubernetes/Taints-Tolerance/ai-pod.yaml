@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ai-pod
+spec:
+  nodeSelector:
+    workload: ai
+  tolerations:
+    - key: "workload"
+      operator: "Equal"
+      value: "ai"
+      effect: "NoSchedule"
+  containers:
+    - name: app
+      image: busybox:1.36
+      command: ["sh", "-c", "echo AI workload running on $(hostname); sleep 3600"]

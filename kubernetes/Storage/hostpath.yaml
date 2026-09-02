@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-demo
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: ["sh", "-c", "while true; do date >> /data/host.txt; sleep 5; done"]
+      volumeMounts:
+        - name: node-storage
+          mountPath: /data
+  volumes:
+    - name: node-storage
+      hostPath:
+        path: /tmp/k8s-hostpath-demo
+        type: DirectoryOrCreate
