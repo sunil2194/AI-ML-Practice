@@ -6,6 +6,7 @@ age = 30
 #Print Name and Age
 #print(name,age)
 
+
 #Print Age and Name with msg, Syntax , in between the variables and text
 # My name is Alice and my age is 30
 #print("My name is:", name, "and my age is:", age)
@@ -15,9 +16,11 @@ age = 30
 #result = "My name is:", name, "and my age is:", age
 #print(result)
 
-# + Operator
-# Python thinks to add an integer (30) to a string ("My age is ")
-# + is used for concatenation of strings or the addition of numbers. Python will not automatically convert data types for you when using the + operator.
+# + Operator,+ is used for concatenation of strings or the addition of numbers.
+#print("Sunil" + "Alice")
+#print(3+4)
+ 
+# Python thinks to add an integer (30) to a string ("My age is "),Python will not automatically convert data types for you when using the + operator.
 #print("My name is: " + name + " and my age is: " + age + ".")
 
 #Take that age=30, convert it into the literal text string '30', and hand it over so that both sides of the + sign are strings.Python is a strongly typed language and will not automatically convert data types for you when using the + operator."
